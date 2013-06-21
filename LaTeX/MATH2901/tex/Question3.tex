@@ -4,17 +4,45 @@
 \section{Question 3} % (fold)
 \label{sec:question3}
 
+%
 \subsection{a.)}
 Suppose that $X \sim \mathcal{N}(\mu,\sigma^2)$ and $Y = \frac{1}{|X|}$.
 
+%
 \subsubsection{i.)}
-
 We wish to discern if the function $f(x)= \frac{1}{|x|} : x \neq 0$ has
 monotonicity.
 
 Clearly we have weak-monotonicity, since if $0 < x_1 \leq x_2$, we have that
 $f(x_1) \geq f(x_2)$ and if $x_1 \leq x_2 < 0$ we then have $f(x_1) \leq f(x_2)$.
 
+%
 \subsubsection{ii.)}
-
 Show that $F_Y(y) = F_X(\frac{1}{y}) - F_X(-\frac{1}{y})$.
+
+%
+\subsection{b.)}
+Consider the two \textbf{r.v.} $X$ and $Y$ with bivariate density given by,
+\[
+ f_{X,Y}(x,y) = \frac{1}{2\pi \sqrt{1 - \rho^2}}
+ \exp{ \frac{ (x^2 - 2 \rho x y + y^2) }{2(1-\rho^2)} }.
+\]
+
+%
+\subsubsection{i.)}
+We call the random vector $(X,Y) \sim \mathcal{N}(\boldsymbol{\mu},\Sigma)$
+density the multivate (in particular, bivariate) standard normal Gaussian.
+Where
+\[
+ \Sigma =
+ \begin{pmatrix}
+  \sigma_x^2 & \rho \sigma_x \sigma_y \\
+  \rho \sigma_x \sigma_y & \sigma_y^2
+ \end{pmatrix}
+ \, ,
+ \boldsymbol{\mu} =
+ \begin{pmatrix}
+  1 \\ 1
+ \end{pmatrix}
+\]
+and by fixing $\sigma_x = \sigma_y = 1$ and taking $\det(\Sigma)=1-\rho^2$.
