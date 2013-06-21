@@ -1,0 +1,46 @@
+% Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+% !Tex root = MATH2901_2011sol.tex
+
+\section{Question 2} % (fold)
+\label{sec:question2}
+
+Let some random univariate (\textbf{r.v.}) $X \sim \mathcal{P}(\lambda)$ be
+\textit{Poisson} distributed with parameter $\lambda$. Then $X$ has density,
+
+\[
+ f_{X}(x;\lambda) = \frac{\lambda^x e^{-\lambda}}{x!} : x = 0,1,2,\dots
+\]
+
+\subsection{a.)}
+
+\subsubsection{i.)}
+
+Suppose $\{X_i\}_{i=1}^n$ denotes an \textbf{i.i.d} random sample and
+$\mathcal{L}_{i}(\lambda | x)=f_{X_i}(x;\lambda)$ denotes the likelihood
+function of the \textbf{r.v.} $X$ with any $x \in \{X_i\}_{i=1}^n$.
+Then the loglikelihood $\ell(\lambda ; x)$ defined on the random sample is
+given by,
+
+\begin{align*}
+ \ell(\lambda ; x) &= \log_{2} \mathcal{L}(\lambda | x)
+ \\
+ &= log_{2} \prod_{i=1}^n \mathcal{L}_{i}(\lambda | x)
+ \tag{by indepenance of the sample}
+ \\
+ &= \log_{2} \prod_{i=1}^n f_{X_i}(x; \lambda)
+ \\
+ &= \sum_{i=1}^n \log_{2} f_{X_i}(x; \lambda)
+ \\
+ &= \sum_{i=1}^n \log_{2}
+ \left\{ \frac{\lambda^{x_i} e^{-\lambda}}{{x_i}!} \right\}
+ \\
+ &= \sum_{i=1}^n
+ \left\{ \log_{2} e^{-\lambda} + \log_{2} \frac{\lambda^{x_i} }{{x_i}!} \right\}
+ \\
+ &= \sum_{i=1}^n \left\{ x_i \log_{2} \lambda - \log_{2} {x_i}! - \lambda \right\}
+ \\
+ \Rightarrow \ell(\lambda ; x) &=
+ - n \lambda + \sum_{i=1}^n \left\{ x_i \log_{2} \lambda - \log_{2} {x_i}! \right\}.
+ \intertext{In particular, we may ignore the constant term that does not depend on $\lambda$,}
+ \Rightarrow \ell(\lambda ; x) &= n \bar{X} \log_{2}(\lambda) -n \lambda.
+\end{align*}
